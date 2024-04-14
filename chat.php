@@ -7,6 +7,7 @@
 ?>
 <?php include_once "header.php"; ?>
 <body>
+  <div class="center">
   <div class="wrapper">
     <section class="chat-area">
       <header>
@@ -35,6 +36,7 @@
         <button><i class="fab fa-telegram-plane"></i></button>
       </form>
     </section>
+  </div>
   </div>
 
   <script src="javascript/chat.js"></script>

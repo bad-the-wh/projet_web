@@ -7,6 +7,7 @@
 
 <?php include_once "header.php"; ?>
 <body>
+  <div class="center">
   <div class="wrapper">
     <section class="form signup">
       <header>Realtime Chat App</header>
@@ -42,7 +43,7 @@
       <div class="link">Already signed up? <a href="login.php">Login now</a></div>
     </section>
   </div>
-
+  </div>
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/signup.js"></script>
 

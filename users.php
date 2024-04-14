@@ -7,6 +7,7 @@
 ?>
 <?php include_once "header.php"; ?>
 <body>
+  <div class="center">
   <div class="wrapper">
     <section class="users">
       <header>
@@ -34,6 +35,7 @@
   
       </div>
     </section>
+  </div>
   </div>
 
   <script src="javascript/users.js"></script>

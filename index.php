@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style1.css">
 
 	<title>Dashboard</title>
 </head>
@@ -22,7 +22,7 @@
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="#">
+				<a href="index.php">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Tableau de bord</span>
 				</a>
@@ -34,7 +34,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="users.php">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Message</span>
 				</a>
