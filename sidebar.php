@@ -17,7 +17,7 @@
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a href="indexM.php" class="nav-link nav-hom">
+            <a href="./index.php?page=indexM" class="nav-link">
             <i class="nav-icon fas fa-solid fa-comment"></i>
               <p>
                 Messagerie

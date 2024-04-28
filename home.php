@@ -1,14 +1,13 @@
 <?php include('db_connect.php') ?>
 <!-- Info boxes -->
-       <div class="row">
-        <div class="col-md-8">
-        <div class="card card-outline card-success">
+      <div class="col-lg-12">
+        <div class="card card-outline card-primary">
           <div class="card-header">
             <b>Project Progress</b>
           </div>
           <div class="card-body p-0">
             <div class="table-responsive">
-              <table class="table m-0 table-hover">
+              <table class="table table-hover">
                 <thead>
                   <th>#</th>
                   <th>Project</th>
