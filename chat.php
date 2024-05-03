@@ -1,11 +1,12 @@
 <?php 
-  session_start();
+  //session_start();
   include_once "php/config.php";
   if(!isset($_SESSION['unique_id'])){
     header("location: ./index.php?page=login");
   }
 ?>
 <?php include_once "headerM.php"; ?>
+<div class="card card-outline card-primary">
   <div class="body">
     <section class="chat-area">
       <header>
@@ -30,10 +31,10 @@
       </div>
       <form action="#" class="typing-area">
         <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
-        <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
+        <input type="text" name="message" class="input-field" placeholder="Tapez un message ici..." autocomplete="off">
         <button><i class="fab fa-telegram-plane"></i></button>
       </form>
     </section>
   </div>
-
+</div>
   <script src="javascript/chat.js"></script>

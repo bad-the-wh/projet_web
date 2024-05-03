@@ -17,7 +17,7 @@
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a href="./index.php?page=indexM" class="nav-link">
+            <a href="./index.php?page=login" class="nav-link nav-messagerie">
             <i class="nav-icon fas fa-solid fa-comment"></i>
               <p>
                 Messagerie
@@ -28,7 +28,7 @@
             <a href="#" class="nav-link nav-edit_project nav-view_project">
               <i class="nav-icon fas fa-layer-group"></i>
               <p>
-                Projects
+                Projets
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -36,17 +36,25 @@
               <li class="nav-item">
                 <a href="./index.php?page=new_project" class="nav-link nav-new_project tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
-                  <p>Add New</p>
+                  <p>Ajouter</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./index.php?page=project_list" class="nav-link nav-project_list tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
-                  <p>List</p>
+                  <p>Liste</p>
                 </a>
               </li>
             </ul>
-          </li> 
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link nav-bell">
+              <i class="nav-icon fas fa-solid fa-bell"></i>
+              <p>
+                Notifications
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -66,8 +74,42 @@
         if($('.nav-link.nav-'+page).hasClass('nav-is-tree') == true){
           $('.nav-link.nav-'+page).parent().addClass('menu-open')
         }
-
   		}
-     
+      $('.nav-link').not('.nav-messagerie').on('click', function() {
+          $('.nav-link.nav-messagerie').removeClass('active');
+          $('.nav-item.dropdown.menu-open').removeClass('menu-open');
+          localStorage.removeItem('activePage');
+      });
+      $('.nav-link.nav-messagerie').on('click', function() {
+          var isActive = $(this).hasClass('active');
+          $('.nav-link').removeClass('active');
+          $('.nav-item.dropdown').removeClass('menu-open');
+          if (!isActive) {
+              $(this).addClass('active').closest('.nav-item.dropdown').addClass('menu-open');
+              localStorage.setItem('activePage', 'messagerie');
+          }
+      });
+      if (localStorage.getItem('activePage') === 'messagerie') {
+          $('.nav-link.nav-messagerie').addClass('active').closest('.nav-item.dropdown').addClass('menu-open');
+      } 
   	})
+    var notifications = [
+        "Aucune nouvelle notification",
+        "Aucune nouvelle notification",
+        "Nouveau message reçu",
+        "Nouvelles actions dans des projets"
+    ];
+    var notificationIndex = 0;
+
+    function showNextNotification() {
+        if (notificationIndex < notifications.length) {
+            var notification = notifications[notificationIndex];
+            alert(notification);
+            notificationIndex++;
+        }
+    }
+
+    $('.nav-link.nav-bell').on('click', function() {
+        showNextNotification();
+    });
   </script>

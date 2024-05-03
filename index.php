@@ -20,7 +20,7 @@
   <?php include 'topbar.php' ?>
   <?php include 'sidebar.php' ?>
 
-  <!-- Content Wrapper. Contains page content -->
+  <!-- Content Wrapper. Contient page content -->
   <div class="content-wrapper d-flex align-items-center flex-column">
   	 <div class="toast" id="alert_toast" role="alert" aria-live="assertive" aria-atomic="true">
 	    <div class="toast-body text-white">
@@ -33,13 +33,12 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0"><?php echo $title ?></h1>
-          </div><!-- /.col -->
+          </div>
 
-        </div><!-- /.row -->
+        </div>
             <hr class="border-primary">
-      </div><!-- /.container-fluid -->
+      </div>
     </div>
-    <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
@@ -53,9 +52,9 @@
 
             }
           ?>
-      </div><!--/. container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
+    <!-- content -->
     <div class="modal fade" id="confirm_modal" role='dialog'>
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
@@ -66,8 +65,8 @@
         <div id="delete_content"></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='confirm' onclick="">Continue</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id='confirm' onclick="">Continuer</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
       </div>
     </div>
@@ -81,8 +80,8 @@
       <div class="modal-body">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Sauvegarder</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
       </div>
       </div>
     </div>

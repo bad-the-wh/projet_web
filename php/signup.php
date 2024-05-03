@@ -27,7 +27,7 @@
                             $new_img_name = $time.$img_name;
                             if(move_uploaded_file($tmp_name,"images/".$new_img_name)){
                                 $ran_id = rand(time(), 100000000);
-                                $status = "Active now";
+                                $status = "En ligne";
                                 $encrypt_pass = md5($password);
                                 $insert_query = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
                                 VALUES ({$ran_id}, '{$fname}','{$lname}', '{$email}', '{$encrypt_pass}', '{$new_img_name}', '{$status}')");
@@ -38,24 +38,24 @@
                                         $_SESSION['unique_id'] = $result['unique_id'];
                                         echo "success";
                                     }else{
-                                        echo "This email address not Exist!";
+                                        echo "Cette adresse email ne correspond pas !";
                                     }
                                 }else{
-                                    echo "Something went wrong. Please try again!";
+                                    echo "Quelque chose ne va pas. Veuillez réessayer !";
                                 }
                             }
                         }else{
-                            echo "Please upload an image file - jpeg, png, jpg";
+                            echo "Veuillez télécharger un fichier image - jpeg, png, jpg";
                         }
                     }else{
-                        echo "Please upload an image file - jpeg, png, jpg";
+                        echo "Veuillez télécharger un fichier image - jpeg, png, jpg";
                     }
                 }
             }
         }else{
-            echo "$email is not a valid email!";
+            echo "$email ne fonctionne pas!";
         }
     }else{
-        echo "All input fields are required!";
+        echo "Tous les champs sont obligatoires!";
     }
 ?>

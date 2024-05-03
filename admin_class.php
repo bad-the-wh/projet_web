@@ -45,7 +45,6 @@ Class Action {
 		if(isset($user_ids)){
 			$data .= ", user_ids='".implode(',',$user_ids)."' ";
 		}
-		// echo $data;exit;
 		if(empty($id)){
 			$save = $this->db->query("INSERT INTO project_list set $data");
 		}else{
@@ -106,7 +105,7 @@ Class Action {
 				}
 			}
 		}
-		$dur = abs(strtotime("2020-01-01 ".$end_time)) - abs(strtotime("2020-01-01 ".$start_time));
+		$dur = abs(strtotime("2024-04-28 ".$end_time)) - abs(strtotime("2024-04-28 ".$start_time));
 		$dur = $dur / (60 * 60);
 		$data .= ", time_rendered='$dur' ";
 		if(empty($id)){

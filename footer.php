@@ -11,7 +11,7 @@
 <script>
 	$(document).ready(function(){
 	  $('.select2').select2({
-	    placeholder:"Please select here",
+	    placeholder:"Séléctionnez ici",
 	    width: "100%"
 	  });
     })
@@ -29,7 +29,7 @@
 	        url:$url,
 	        error:err=>{
 	            console.log()
-	            alert("An error occured")
+	            alert("Une erreur s'est produite")
 	        },
 	        success:function(resp){
 	            if(resp){

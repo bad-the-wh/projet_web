@@ -3,15 +3,15 @@
       <div class="col-lg-12">
         <div class="card card-outline card-primary">
           <div class="card-header">
-            <b>Project Progress</b>
+            <b>Avancés des Projets</b>
           </div>
           <div class="card-body p-0">
             <div class="table-responsive">
               <table class="table table-hover">
                 <thead>
                   <th>#</th>
-                  <th>Project</th>
-                  <th>Progress</th>
+                  <th>Projet</th>
+                  <th>Progression</th>
                   <th></th>
                 </thead>
                 <tbody>
@@ -54,7 +54,7 @@
                               </div>
                           </div>
                           <small>
-                              <?php echo $prog ?>% Complete
+                              <?php echo $prog ?>% Complété
                           </small>
                       </td>
                   </tr>

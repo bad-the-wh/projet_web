@@ -6,6 +6,7 @@
   }
 ?>
 <?php include_once "headerM.php"; ?>
+<div class="card card-outline card-primary">
 <div class="body">
     <section class="users">
       <header>
@@ -22,11 +23,11 @@
             <p><?php echo $row['status']; ?></p>
           </div>
         </div>
-        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
+        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Se déconnecter</a>
       </header>
       <div class="search">
-        <span class="text">Select an user to start chat</span>
-        <input type="text" placeholder="Enter name to search...">
+        <span class="text">Sélectionnez un utilisateur pour parler</span>
+        <input type="text" placeholder="Entrez le nom à rechercher...">
         <button><i class="fas fa-search"></i></button>
       </div>
       <div class="users-list">
@@ -34,4 +35,5 @@
       </div>
     </section>
   </div>
+</div>
 <script src="javascript/users.js"></script>

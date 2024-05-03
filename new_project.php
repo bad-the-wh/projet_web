@@ -9,17 +9,17 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					<label for="" class="control-label">Name</label>
+					<label for="" class="control-label">Nom</label>
 					<input type="text" class="form-control form-control-sm" name="name" value="<?php echo isset($name) ? $name : '' ?>">
 				</div>
 			</div>
           	<div class="col-md-6">
 				<div class="form-group">
-					<label for="">Status</label>
+					<label for="">Statut</label>
 					<select name="status" id="status" class="custom-select custom-select-sm">
-						<option value="0" <?php echo isset($status) && $status == 0 ? 'selected' : '' ?>>Pending</option>
-						<option value="3" <?php echo isset($status) && $status == 3 ? 'selected' : '' ?>>On-Hold</option>
-						<option value="5" <?php echo isset($status) && $status == 5 ? 'selected' : '' ?>>Done</option>
+						<option value="0" <?php echo isset($status) && $status == 0 ? 'selected' : '' ?>>En cours</option>
+						<option value="3" <?php echo isset($status) && $status == 3 ? 'selected' : '' ?>>En pause</option>
+						<option value="5" <?php echo isset($status) && $status == 5 ? 'selected' : '' ?>>Terminer</option>
 					</select>
 				</div>
 			</div>
@@ -27,13 +27,13 @@
 		<div class="row">
 			<div class="col-md-6">
             <div class="form-group">
-              <label for="" class="control-label">Start Date</label>
+              <label for="" class="control-label">Date de début</label>
               <input type="date" class="form-control form-control-sm" autocomplete="off" name="start_date" value="<?php echo isset($start_date) ? date("Y-m-d",strtotime($start_date)) : '' ?>">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label for="" class="control-label">End Date</label>
+              <label for="" class="control-label">Date de fin</label>
               <input type="date" class="form-control form-control-sm" autocomplete="off" name="end_date" value="<?php echo isset($end_date) ? date("Y-m-d",strtotime($end_date)) : '' ?>">
             </div>
           </div>
@@ -41,7 +41,7 @@
         <div class="row">
            <div class="col-md-6">
             <div class="form-group">
-              <label for="" class="control-label">Project Manager</label>
+              <label for="" class="control-label">Chef de projet</label>
               <select class="form-control form-control-sm select2" name="manager_id">
               	<option></option>
               	<?php 
@@ -55,7 +55,7 @@
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label for="" class="control-label">Project Team Members</label>
+              <label for="" class="control-label">Membres</label>
               <select class="form-control form-control-sm select2" multiple="multiple" name="user_ids[]">
               	<option></option>
               	<?php 
@@ -82,8 +82,8 @@
     	</div>
     	<div class="card-footer border-top border-info">
     		<div class="d-flex w-100 justify-content-center align-items-center">
-    			<button class="btn btn-flat  bg-gradient-primary mx-2" form="manage-project">Save</button>
-    			<button class="btn btn-flat bg-gradient-secondary mx-2" type="button" onclick="location.href='index.php?page=project_list'">Cancel</button>
+    			<button class="btn btn-flat  bg-gradient-primary mx-2" form="manage-project">Sauvegarder</button>
+    			<button class="btn btn-flat bg-gradient-secondary mx-2" type="button" onclick="location.href='index.php?page=project_list'">Annuler</button>
     		</div>
     	</div>
 	</div>
@@ -102,7 +102,7 @@
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Data successfully saved',"success");
+					alert_toast('Données enregistrées avec succès',"success");
 					setTimeout(function(){
 						location.href = 'index.php?page=project_list'
 					},2000)

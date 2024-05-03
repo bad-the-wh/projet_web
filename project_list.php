@@ -1,6 +1,6 @@
 <?php include'db_connect.php' ?>
 <div class="col-lg-12">
-	<div class="card card-outline card-success">
+	<div class="card card-outline card-primary">
 		<div class="card-body">
 			<table class="table tabe-hover table-condensed" id="list">
 				<colgroup>
@@ -14,17 +14,17 @@
 				<thead>
 					<tr>
 						<th class="text-center">#</th>
-						<th>Project</th>
-						<th>Date Started</th>
-						<th>Due Date</th>
-						<th>Status</th>
+						<th>Projets</th>
+						<th>Date de début</th>
+						<th>Date de fin</th>
+						<th>Statut</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php
 					$i = 1;
-					$stat = array("Pending","Started","On-Progress","On-Hold","Over Due","Done");
+					$stat = array("En attente","Commencer","En cours","En pause","Finition","Terminer");
 					$where = "";
 					$qry = $conn->query("SELECT * FROM project_list $where order by name asc");
 					while($row= $qry->fetch_assoc()):
@@ -57,17 +57,17 @@
 						<td><b><?php echo date("M d, Y",strtotime($row['end_date'])) ?></b></td>
 						<td class="text-center">
 							<?php
-							  if($stat[$row['status']] =='Pending'){
+							  if($stat[$row['status']] =='En attente'){
 							  	echo "<span class='badge badge-secondary'>{$stat[$row['status']]}</span>";
-							  }elseif($stat[$row['status']] =='Started'){
+							  }elseif($stat[$row['status']] =='Commencer'){
 							  	echo "<span class='badge badge-primary'>{$stat[$row['status']]}</span>";
-							  }elseif($stat[$row['status']] =='On-Progress'){
+							  }elseif($stat[$row['status']] =='En cours'){
 							  	echo "<span class='badge badge-info'>{$stat[$row['status']]}</span>";
-							  }elseif($stat[$row['status']] =='On-Hold'){
+							  }elseif($stat[$row['status']] =='En pause'){
 							  	echo "<span class='badge badge-warning'>{$stat[$row['status']]}</span>";
-							  }elseif($stat[$row['status']] =='Over Due'){
+							  }elseif($stat[$row['status']] =='Finition'){
 							  	echo "<span class='badge badge-danger'>{$stat[$row['status']]}</span>";
-							  }elseif($stat[$row['status']] =='Done'){
+							  }elseif($stat[$row['status']] =='Terminer'){
 							  	echo "<span class='badge badge-success'>{$stat[$row['status']]}</span>";
 							  }
 							?>
@@ -77,11 +77,11 @@
 		                      Action
 		                    </button>
 		                    <div class="dropdown-menu" style="">
-		                      <a class="dropdown-item view_project" href="./index.php?page=view_project&id=<?php echo $row['id'] ?>" data-id="<?php echo $row['id'] ?>">View</a>
+		                      <a class="dropdown-item view_project" href="./index.php?page=view_project&id=<?php echo $row['id'] ?>" data-id="<?php echo $row['id'] ?>">Voir</a>
 		                      <div class="dropdown-divider"></div>
-		                      <a class="dropdown-item" href="./index.php?page=edit_project&id=<?php echo $row['id'] ?>">Edit</a>
+		                      <a class="dropdown-item" href="./index.php?page=edit_project&id=<?php echo $row['id'] ?>">Modifier</a>
 		                      <div class="dropdown-divider"></div>
-		                      <a class="dropdown-item delete_project" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
+		                      <a class="dropdown-item delete_project" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Supprimer</a>
 		                    </div>
 						</td>
 					</tr>	
@@ -104,7 +104,7 @@
 		$('#list').dataTable()
 	
 	$('.delete_project').click(function(){
-	_conf("Are you sure to delete this project?","delete_project",[$(this).attr('data-id')])
+	_conf("Êtes-vous sûr de supprimer ce projet ?","delete_project",[$(this).attr('data-id')])
 	})
 	})
 	function delete_project($id){
@@ -115,7 +115,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Données supprimées avec succès",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)

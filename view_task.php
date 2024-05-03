@@ -9,19 +9,19 @@ if(isset($_GET['id'])){
 ?>
 <div class="container-fluid">
 	<dl>
-		<dt><b class="border-bottom border-primary">Task</b></dt>
+		<dt><b class="border-bottom border-primary">Tâche</b></dt>
 		<dd><?php echo ucwords($task) ?></dd>
 	</dl>
 	<dl>
-		<dt><b class="border-bottom border-primary">Status</b></dt>
+		<dt><b class="border-bottom border-primary">Statut</b></dt>
 		<dd>
 			<?php 
         	if($status == 1){
-		  		echo "<span class='badge badge-secondary'>Pending</span>";
+		  		echo "<span class='badge badge-secondary'>En cours</span>";
         	}elseif($status == 2){
-		  		echo "<span class='badge badge-primary'>On-Progress</span>";
+		  		echo "<span class='badge badge-primary'>En pause</span>";
         	}elseif($status == 3){
-		  		echo "<span class='badge badge-success'>Done</span>";
+		  		echo "<span class='badge badge-success'>Terminer</span>";
         	}
         	?>
 		</dd>
